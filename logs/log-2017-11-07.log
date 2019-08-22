@@ -1,5 +1,5 @@
-10:17:45.891 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Starting SdnApplication on yu with PID 6828 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava) 
-10:17:45.975 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - No active profile set, falling back to default profiles: default 
+10:17:45.891 [restartedMain] INFO  SdnApplication - Starting SdnApplication on yu with PID 6828 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava)
+10:17:45.975 [restartedMain] INFO  SdnApplication - No active profile set, falling back to default profiles: default
 10:17:47.361 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1f54fc18: startup date [Tue Nov 07 10:17:47 CST 2017]; root of context hierarchy 
 10:17:54.579 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http) 
 10:17:54.868 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service Tomcat 
@@ -12,22 +12,22 @@
 10:17:56.596 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*] 
 10:17:56.597 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*] 
 10:17:58.110 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1f54fc18: startup date [Tue Nov 07 10:17:47 CST 2017]; root of context hierarchy 
-10:17:58.469 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getClusterDetailByDcName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.ClusterController.getClusterDetailByDcName(java.lang.String) 
-10:17:58.473 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getClusterDetail],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.ClusterController.getClusterDetail() 
-10:17:58.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getDataCenterDetail],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.DataCenterController.getDataCenterDetail() 
-10:17:58.481 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getDataStoreDetail],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.DataStoreController.getDataStoreDetail(java.lang.String,java.lang.String) 
-10:17:58.484 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getHostDetial(java.lang.String) 
-10:17:58.487 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.connect() 
-10:17:58.488 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.disconnect() 
-10:17:58.498 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMCPUPerByTimeRange],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMCPUPerByTimeRange(java.lang.String) 
-10:17:58.499 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMByName(java.lang.String) 
-10:17:58.502 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVmDetial() 
-10:17:58.503 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/vmCDOper],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.vmCDOper(java.lang.String,java.lang.String) 
-10:17:58.505 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/createVmByTemp],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.createVmByTemp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) 
-10:17:58.515 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/vmOperate],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.vmOperate(java.lang.String,java.lang.String,java.lang.String) 
-10:17:58.517 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/createVm],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.createVm(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) 
-10:17:58.523 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.index() 
-10:17:58.525 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.whiteList() 
+10:17:58.469 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getClusterDetailByDcName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String ClusterController.getClusterDetailByDcName(java.lang.String)
+10:17:58.473 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getClusterDetail],produces=[application/json;charset=UTF-8]}" onto public java.lang.String ClusterController.getClusterDetail()
+10:17:58.479 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getDataCenterDetail],produces=[application/json;charset=UTF-8]}" onto public java.lang.String DataCenterController.getDataCenterDetail()
+10:17:58.481 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getDataStoreDetail],produces=[application/json;charset=UTF-8]}" onto public java.lang.String DataStoreController.getDataStoreDetail(java.lang.String,java.lang.String)
+10:17:58.484 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String HostController.getHostDetial(java.lang.String)
+10:17:58.487 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String TestController.connect()
+10:17:58.488 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String TestController.disconnect()
+10:17:58.498 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMCPUPerByTimeRange],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVMCPUPerByTimeRange(java.lang.String)
+10:17:58.499 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVMByName(java.lang.String)
+10:17:58.502 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVmDetial()
+10:17:58.503 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/vmCDOper],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.vmCDOper(java.lang.String,java.lang.String)
+10:17:58.505 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/createVmByTemp],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.createVmByTemp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+10:17:58.515 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/vmOperate],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.vmOperate(java.lang.String,java.lang.String,java.lang.String)
+10:17:58.517 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/createVm],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.createVm(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+10:17:58.523 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String WebController.index()
+10:17:58.525 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String WebController.whiteList()
 10:17:58.546 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
 10:17:58.548 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
 10:17:58.676 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
@@ -37,12 +37,12 @@
 10:18:01.068 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup 
 10:18:01.751 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http) 
 10:18:01.775 [restartedMain] INFO  c.u.s.v.controller.StartupRunner - >>>>>>>>>>>>>>>服务启动执行，执行  <<<<<<<<<<<<< 
-10:18:01.783 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Started SdnApplication in 17.831 seconds (JVM running for 21.452) 
+10:18:01.783 [restartedMain] INFO  SdnApplication - Started SdnApplication in 17.831 seconds (JVM running for 21.452)
 10:18:01.810 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态 
 10:18:01.854 [Vmware连接检测线程] ERROR c.u.sdn.vmware.Service.ClientSesion - 检查 异常 
 java.lang.NullPointerException: null
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion.check(ClientSesion.java:72)
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion$KeepAlive.run(ClientSesion.java:86)
+	at ClientSesion.check(ClientSesion.java:72)
+	at ClientSesion$KeepAlive.run(ClientSesion.java:86)
 	at java.lang.Thread.run(Thread.java:745)
 10:18:01.857 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态:断开连接，重新连接。 
 10:18:05.503 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 名称:VMware vCenter Server 5.5.0 build-3142196;版本:5.5.0;apiTypeVirtualCenter 

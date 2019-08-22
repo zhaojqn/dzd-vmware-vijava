@@ -1,5 +1,5 @@
-11:47:56.871 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Starting SdnApplication on yu with PID 9996 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava) 
-11:47:56.913 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - No active profile set, falling back to default profiles: default 
+11:47:56.871 [restartedMain] INFO  SdnApplication - Starting SdnApplication on yu with PID 9996 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava)
+11:47:56.913 [restartedMain] INFO  SdnApplication - No active profile set, falling back to default profiles: default
 11:47:59.328 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@380bb853: startup date [Tue Oct 31 11:47:59 CST 2017]; root of context hierarchy 
 11:48:28.735 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http) 
 11:48:28.994 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service Tomcat 
@@ -12,23 +12,23 @@
 11:48:33.499 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*] 
 11:48:33.500 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*] 
 11:48:37.636 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@380bb853: startup date [Tue Oct 31 11:47:59 CST 2017]; root of context hierarchy 
-11:48:38.437 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getVmDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException 
-11:48:38.445 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.connect() 
-11:48:38.446 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.disconnect() 
-11:48:38.450 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMByName(java.lang.String) 
+11:48:38.437 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial]}" onto public java.lang.String HostController.getVmDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException
+11:48:38.445 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String TestController.connect()
+11:48:38.446 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String TestController.disconnect()
+11:48:38.450 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName]}" onto public java.lang.String VmController.getVMByName(java.lang.String)
 11:48:38.452 [restartedMain] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'vmController' method 
-public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVmDetial()
+public java.lang.String VmController.getVmDetial()
 to {[/getVmDetial]}: There is already 'hostController' bean method
-public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getVmDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException mapped. 
+public java.lang.String HostController.getVmDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException mapped.
 11:48:38.569 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service Tomcat 
 11:48:38.944 [restartedMain] INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
 
 Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled. 
 11:48:38.975 [restartedMain] ERROR o.s.boot.SpringApplication - Application startup failed 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'vmController' method 
-public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVmDetial()
+public java.lang.String VmController.getVmDetial()
 to {[/getVmDetial]}: There is already 'hostController' bean method
-public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getVmDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException mapped.
+public java.lang.String HostController.getVmDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
@@ -45,16 +45,16 @@ public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getVmD
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
-	at com.ustcinfo.sdn.SdnApplication.main(SdnApplication.java:15)
+	at SdnApplication.main(SdnApplication.java:15)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:483)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'vmController' method 
-public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVmDetial()
+public java.lang.String VmController.getVmDetial()
 to {[/getVmDetial]}: There is already 'hostController' bean method
-public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getVmDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException mapped.
+public java.lang.String HostController.getVmDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:576)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:540)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:264)
@@ -65,8 +65,8 @@ public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getVmD
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
 	... 21 common frames omitted
-11:49:15.714 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Starting SdnApplication on yu with PID 11808 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava) 
-11:49:15.747 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - No active profile set, falling back to default profiles: default 
+11:49:15.714 [restartedMain] INFO  SdnApplication - Starting SdnApplication on yu with PID 11808 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava)
+11:49:15.747 [restartedMain] INFO  SdnApplication - No active profile set, falling back to default profiles: default
 11:49:17.358 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@380bb853: startup date [Tue Oct 31 11:49:17 CST 2017]; root of context hierarchy 
 11:49:23.711 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http) 
 11:49:23.758 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service Tomcat 
@@ -79,13 +79,13 @@ public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getVmD
 11:49:25.061 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*] 
 11:49:25.061 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*] 
 11:49:26.364 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@380bb853: startup date [Tue Oct 31 11:49:17 CST 2017]; root of context hierarchy 
-11:49:26.670 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getHostDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException 
-11:49:26.678 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.connect() 
-11:49:26.679 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.disconnect() 
-11:49:26.682 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVmDetial() 
-11:49:26.684 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMByName(java.lang.String) 
-11:49:26.690 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.index() 
-11:49:26.692 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.whiteList() 
+11:49:26.670 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial]}" onto public java.lang.String HostController.getHostDetial() throws com.vmware.vim25.InvalidProperty,com.vmware.vim25.RuntimeFault,java.rmi.RemoteException
+11:49:26.678 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String TestController.connect()
+11:49:26.679 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String TestController.disconnect()
+11:49:26.682 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial]}" onto public java.lang.String VmController.getVmDetial()
+11:49:26.684 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName]}" onto public java.lang.String VmController.getVMByName(java.lang.String)
+11:49:26.690 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String WebController.index()
+11:49:26.692 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String WebController.whiteList()
 11:49:26.701 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
 11:49:26.704 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
 11:49:26.971 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
@@ -95,12 +95,12 @@ public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getVmD
 11:49:33.378 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup 
 11:49:34.411 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http) 
 11:49:34.470 [restartedMain] INFO  c.u.s.v.controller.StartupRunner - >>>>>>>>>>>>>>>服务启动执行，执行  <<<<<<<<<<<<< 
-11:49:34.486 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Started SdnApplication in 20.359 seconds (JVM running for 23.611) 
+11:49:34.486 [restartedMain] INFO  SdnApplication - Started SdnApplication in 20.359 seconds (JVM running for 23.611)
 11:49:34.493 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态 
 11:49:34.499 [Vmware连接检测线程] ERROR c.u.sdn.vmware.Service.ClientSesion - 检查 异常 
 java.lang.NullPointerException: null
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion.check(ClientSesion.java:72)
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion$KeepAlive.run(ClientSesion.java:86)
+	at ClientSesion.check(ClientSesion.java:72)
+	at ClientSesion$KeepAlive.run(ClientSesion.java:86)
 	at java.lang.Thread.run(Thread.java:745)
 11:49:34.501 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态:断开连接，重新连接。 
 11:49:37.965 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 名称:VMware vCenter Server 5.5.0 build-3142196;版本:5.5.0;apiTypeVirtualCenter 
@@ -114,8 +114,8 @@ java.lang.NullPointerException: null
 11:50:07.987 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态 
 11:50:08.023 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 信息java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="GMT+00:00",offset=0,dstSavings=0,useDaylight=false,transitions=0,lastRule=null],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2017,MONTH=9,WEEK_OF_YEAR=1,WEEK_OF_MONTH=1,DAY_OF_MONTH=31,DAY_OF_YEAR=1,DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=1,AM_PM=0,HOUR=0,HOUR_OF_DAY=3,MINUTE=50,SECOND=11,MILLISECOND=870,ZONE_OFFSET=0,DST_OFFSET=0] 
 11:50:08.024 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态成功，休眠30000毫秒 
-13:41:41.148 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Starting SdnApplication on yu with PID 7100 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava) 
-13:41:41.195 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - No active profile set, falling back to default profiles: default 
+13:41:41.148 [restartedMain] INFO  SdnApplication - Starting SdnApplication on yu with PID 7100 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava)
+13:41:41.195 [restartedMain] INFO  SdnApplication - No active profile set, falling back to default profiles: default
 13:41:42.760 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@76fefc23: startup date [Tue Oct 31 13:41:42 CST 2017]; root of context hierarchy 
 13:41:50.210 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http) 
 13:41:50.341 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service Tomcat 
@@ -128,13 +128,13 @@ java.lang.NullPointerException: null
 13:41:51.497 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*] 
 13:41:51.497 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*] 
 13:41:52.787 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@76fefc23: startup date [Tue Oct 31 13:41:42 CST 2017]; root of context hierarchy 
-13:41:53.008 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getHostDetial(java.lang.String) 
-13:41:53.012 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.connect() 
-13:41:53.014 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.disconnect() 
-13:41:53.017 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVmDetial() 
-13:41:53.019 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMByName(java.lang.String) 
-13:41:53.021 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.index() 
-13:41:53.023 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.whiteList() 
+13:41:53.008 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String HostController.getHostDetial(java.lang.String)
+13:41:53.012 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String TestController.connect()
+13:41:53.014 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String TestController.disconnect()
+13:41:53.017 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVmDetial()
+13:41:53.019 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVMByName(java.lang.String)
+13:41:53.021 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String WebController.index()
+13:41:53.023 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String WebController.whiteList()
 13:41:53.039 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
 13:41:53.041 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
 13:41:53.242 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
@@ -145,11 +145,11 @@ java.lang.NullPointerException: null
 13:41:57.040 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http) 
 13:41:57.061 [restartedMain] INFO  c.u.s.v.controller.StartupRunner - >>>>>>>>>>>>>>>服务启动执行，执行  <<<<<<<<<<<<< 
 13:41:57.065 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态 
-13:41:57.068 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Started SdnApplication in 17.398 seconds (JVM running for 21.058) 
+13:41:57.068 [restartedMain] INFO  SdnApplication - Started SdnApplication in 17.398 seconds (JVM running for 21.058)
 13:41:57.107 [Vmware连接检测线程] ERROR c.u.sdn.vmware.Service.ClientSesion - 检查 异常 
 java.lang.NullPointerException: null
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion.check(ClientSesion.java:72)
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion$KeepAlive.run(ClientSesion.java:86)
+	at ClientSesion.check(ClientSesion.java:72)
+	at ClientSesion$KeepAlive.run(ClientSesion.java:86)
 	at java.lang.Thread.run(Thread.java:745)
 13:41:57.109 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态:断开连接，重新连接。 
 13:42:02.287 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 名称:VMware vCenter Server 5.5.0 build-3142196;版本:5.5.0;apiTypeVirtualCenter 
@@ -318,8 +318,8 @@ java.lang.NullPointerException: null
 14:08:03.838 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态 
 14:08:03.856 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 信息java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="GMT+00:00",offset=0,dstSavings=0,useDaylight=false,transitions=0,lastRule=null],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2017,MONTH=9,WEEK_OF_YEAR=1,WEEK_OF_MONTH=1,DAY_OF_MONTH=31,DAY_OF_YEAR=1,DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=1,AM_PM=0,HOUR=0,HOUR_OF_DAY=6,MINUTE=8,SECOND=3,MILLISECOND=312,ZONE_OFFSET=0,DST_OFFSET=0] 
 14:08:03.857 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态成功，休眠30000毫秒 
-16:14:13.038 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Starting SdnApplication on yu with PID 14520 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava) 
-16:14:13.069 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - No active profile set, falling back to default profiles: default 
+16:14:13.038 [restartedMain] INFO  SdnApplication - Starting SdnApplication on yu with PID 14520 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava)
+16:14:13.069 [restartedMain] INFO  SdnApplication - No active profile set, falling back to default profiles: default
 16:14:15.219 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2549e343: startup date [Tue Oct 31 16:14:15 CST 2017]; root of context hierarchy 
 16:14:22.819 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http) 
 16:14:22.918 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service Tomcat 
@@ -332,14 +332,14 @@ java.lang.NullPointerException: null
 16:14:24.175 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*] 
 16:14:24.175 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*] 
 16:14:25.155 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2549e343: startup date [Tue Oct 31 16:14:15 CST 2017]; root of context hierarchy 
-16:14:25.368 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getHostDetial(java.lang.String) 
-16:14:25.371 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.connect() 
-16:14:25.373 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.disconnect() 
-16:14:25.375 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMByName(java.lang.String) 
-16:14:25.376 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVmDetial() 
-16:14:25.376 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMCPUPerByTimeRange],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMCPUPerByTimeRange(java.lang.String) 
-16:14:25.378 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.index() 
-16:14:25.378 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.whiteList() 
+16:14:25.368 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String HostController.getHostDetial(java.lang.String)
+16:14:25.371 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String TestController.connect()
+16:14:25.373 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String TestController.disconnect()
+16:14:25.375 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVMByName(java.lang.String)
+16:14:25.376 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVmDetial()
+16:14:25.376 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMCPUPerByTimeRange],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVMCPUPerByTimeRange(java.lang.String)
+16:14:25.378 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String WebController.index()
+16:14:25.378 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String WebController.whiteList()
 16:14:25.385 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
 16:14:25.386 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
 16:14:25.565 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
@@ -349,12 +349,12 @@ java.lang.NullPointerException: null
 16:14:28.717 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup 
 16:14:29.038 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http) 
 16:14:29.057 [restartedMain] INFO  c.u.s.v.controller.StartupRunner - >>>>>>>>>>>>>>>服务启动执行，执行  <<<<<<<<<<<<< 
-16:14:29.060 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Started SdnApplication in 18.408 seconds (JVM running for 22.865) 
+16:14:29.060 [restartedMain] INFO  SdnApplication - Started SdnApplication in 18.408 seconds (JVM running for 22.865)
 16:14:29.069 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态 
 16:14:29.112 [Vmware连接检测线程] ERROR c.u.sdn.vmware.Service.ClientSesion - 检查 异常 
 java.lang.NullPointerException: null
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion.check(ClientSesion.java:72)
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion$KeepAlive.run(ClientSesion.java:86)
+	at ClientSesion.check(ClientSesion.java:72)
+	at ClientSesion$KeepAlive.run(ClientSesion.java:86)
 	at java.lang.Thread.run(Thread.java:745)
 16:14:29.112 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态:断开连接，重新连接。 
 16:14:30.689 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 名称:VMware vCenter Server 5.5.0 build-3142196;版本:5.5.0;apiTypeVirtualCenter 
@@ -566,8 +566,8 @@ java.lang.NullPointerException: null
 16:19:31.039 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态 
 16:19:31.044 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 信息java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="GMT+00:00",offset=0,dstSavings=0,useDaylight=false,transitions=0,lastRule=null],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2017,MONTH=9,WEEK_OF_YEAR=1,WEEK_OF_MONTH=1,DAY_OF_MONTH=31,DAY_OF_YEAR=1,DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=1,AM_PM=0,HOUR=0,HOUR_OF_DAY=8,MINUTE=19,SECOND=30,MILLISECOND=652,ZONE_OFFSET=0,DST_OFFSET=0] 
 16:19:31.044 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态成功，休眠30000毫秒 
-16:42:14.110 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Starting SdnApplication on yu with PID 1340 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava) 
-16:42:14.118 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - No active profile set, falling back to default profiles: default 
+16:42:14.110 [restartedMain] INFO  SdnApplication - Starting SdnApplication on yu with PID 1340 (started by dong in F:\Program Files (x86)\workspaceSMS\sdn-vmware-vijava)
+16:42:14.118 [restartedMain] INFO  SdnApplication - No active profile set, falling back to default profiles: default
 16:42:14.856 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@44202f98: startup date [Tue Oct 31 16:42:14 CST 2017]; root of context hierarchy 
 16:42:21.634 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http) 
 16:42:21.678 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service Tomcat 
@@ -580,14 +580,14 @@ java.lang.NullPointerException: null
 16:42:22.777 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*] 
 16:42:22.777 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*] 
 16:42:23.768 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@44202f98: startup date [Tue Oct 31 16:42:14 CST 2017]; root of context hierarchy 
-16:42:23.967 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.HostController.getHostDetial(java.lang.String) 
-16:42:23.970 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.connect() 
-16:42:23.971 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.TestController.disconnect() 
-16:42:23.978 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMByName(java.lang.String) 
-16:42:23.979 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVmDetial() 
-16:42:23.980 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMCPUPerByTimeRange],produces=[application/json;charset=UTF-8]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.VmController.getVMCPUPerByTimeRange(java.lang.String) 
-16:42:23.981 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.index() 
-16:42:23.982 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String com.ustcinfo.sdn.vmware.controller.WebController.whiteList() 
+16:42:23.967 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getHostDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String HostController.getHostDetial(java.lang.String)
+16:42:23.970 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/connect]}" onto public java.lang.String TestController.connect()
+16:42:23.971 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/disconnect]}" onto public java.lang.String TestController.disconnect()
+16:42:23.978 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMByName],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVMByName(java.lang.String)
+16:42:23.979 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVmDetial],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVmDetial()
+16:42:23.980 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getVMCPUPerByTimeRange],produces=[application/json;charset=UTF-8]}" onto public java.lang.String VmController.getVMCPUPerByTimeRange(java.lang.String)
+16:42:23.981 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/index]}" onto public java.lang.String WebController.index()
+16:42:23.982 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/whitelist]}" onto public java.lang.String WebController.whiteList()
 16:42:23.988 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
 16:42:23.991 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
 16:42:24.134 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
@@ -597,12 +597,12 @@ java.lang.NullPointerException: null
 16:42:26.798 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup 
 16:42:26.947 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http) 
 16:42:26.954 [restartedMain] INFO  c.u.s.v.controller.StartupRunner - >>>>>>>>>>>>>>>服务启动执行，执行  <<<<<<<<<<<<< 
-16:42:26.960 [restartedMain] INFO  com.ustcinfo.sdn.SdnApplication - Started SdnApplication in 13.677 seconds (JVM running for 16.263) 
+16:42:26.960 [restartedMain] INFO  SdnApplication - Started SdnApplication in 13.677 seconds (JVM running for 16.263)
 16:42:26.967 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态 
 16:42:26.972 [Vmware连接检测线程] ERROR c.u.sdn.vmware.Service.ClientSesion - 检查 异常 
 java.lang.NullPointerException: null
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion.check(ClientSesion.java:72)
-	at com.ustcinfo.sdn.vmware.Service.ClientSesion$KeepAlive.run(ClientSesion.java:86)
+	at ClientSesion.check(ClientSesion.java:72)
+	at ClientSesion$KeepAlive.run(ClientSesion.java:86)
 	at java.lang.Thread.run(Thread.java:745)
 16:42:26.974 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 检查 连接状态:断开连接，重新连接。 
 16:42:28.015 [Vmware连接检测线程] INFO  c.u.sdn.vmware.Service.ClientSesion - 名称:VMware vCenter Server 5.5.0 build-3142196;版本:5.5.0;apiTypeVirtualCenter 
