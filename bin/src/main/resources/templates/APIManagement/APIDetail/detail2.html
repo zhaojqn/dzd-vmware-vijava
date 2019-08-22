@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<head th:include="common"/>
+	<title>物联网卡短信下发API</title>
+	<style>
+		.divbox {
+    		line-height: 24px;
+   			margin-bottom: 30px;
+   			margin-left:50px;
+		}
+		.sub_title {
+   			margin-bottom: 5px;
+  			font-weight: bold;
+  			font-size: 14px;
+   			color: #666;
+		}
+		.divbox .api_p {
+    		font-size: 14px;
+    		line-height: 30px;
+    		color: #666;
+		}
+		.api_table {
+    		border-collapse:collapse;
+    		border:none;
+		}
+		.api_table td {
+			border:1px solid #dfdfe1;
+			height:36px;
+			text-align:left;
+			padding-left:10px;
+		}
+		.backExample {
+			background:#fbfdfd;
+			padding:20px 30px;
+			border:1px solid #dfdfe1;
+			width:640px;
+		}
+	</style>
+</head>
+<body>
+<div title="物联网卡短信下发API" class="easyui-panel" data-options="fit:true">
+<div class="divbox" style="margin-top:20px;">
+	<div class="sub_title">接口地址</div>
+	<p class="api_p">/coupletsmsSend</p>
+</div>
+<div class="divbox" style="margin-top:20px;">
+	<div class="sub_title">请求示例</div>
+	<p class="api_p">/coupletsmsSend?spid=425434&amp;mobiles=13812341234,13856785678&amp;msg=测试消息</p>
+</div>
+<!-- <div class="divbox" style="margin-top:20px;">
+	<div class="sub_title">编码</div>
+	<p class="api_p">统一使用&nbsp;<span style="color:#2bc2f4;">UTF-8</span>&nbsp;编码，请确保您的文件编码及传入参数的格式</p>
+</div> -->
+<div class="divbox" style="margin-top:20px;">
+	<div class="sub_title">请求参数</div>
+			<table class="api_table">
+				<tr>
+					<td style="width: 120px;">名称</td>
+					<td style="width: 80px;">类型</td>
+					<td style="width: 80px;">必填</td>
+					<td style="width: 370px;">说明</td>
+				</tr>
+				<tr>
+					<td>spid</td>
+					<td>字符串</td>
+					<td>是</td>
+					<td>企业接入设置中的接入号码</td>
+				</tr>
+				<tr>
+					<td>mobiles</td>
+					<td>字符串</td>
+					<td>是</td>
+					<td>短信接收号码,最大100条,逗号分割</td>
+				</tr>
+				<tr>
+					<td>msg</td>
+					<td>字符串</td>
+					<td>是</td>
+					<td>短信内容</td>
+				</tr>
+			</table>
+		</div>
+<div class="divbox" style="margin-top:20px;">
+	<div class="sub_title">返回字段</div>
+	<table class="api_table">
+                            <tr>
+                                <td style="width: 120px;">名称</td>
+                                <td style="width: 80px;">类型</td>
+                                <td style="width: 200px;">说明</td>
+                            </tr>
+                            <tr>
+                                <td>result</td>
+                                <td>字符串</td>
+                                <td>处理结果码，0-成功；1-失败；</td>
+                            </tr>
+                            <tr>
+                                <td>resultInfo</td>
+                                <td>字符串</td>
+                                <td>处理结果描述信息</td>
+                            </tr>
+                        </table>
+</div>
+<!-- <div class="divbox" style="margin-top:20px;">
+	<div class="sub_title">返回示例</div>
+	<div class="backExample">
+                            {"result":"10701","resultInfo":"201408250920530265531100","errorInfo":""}
+                        </div>
+
+</div>
+<div class="divbox" style="margin-top:20px;">
+	<div class="sub_title">错误码</div>
+	<table class="api_table">
+                            <tr>
+                                <td style="width: 100px;">结果码</td>
+                                <td style="width: 580px;">说明</td>
+                            </tr>
+                            <tr>
+                                <td>10701</td>
+                                <td>下发处理成功,resultInfo会返回下发流水号</td>
+                            </tr>
+                            <tr>
+                                <td>10702</td>
+                                <td>下发处理失败,resultInfo会描述具体失败原因,此次下发请求被放弃</td>
+                            </tr>
+                            <tr>
+                                <td>10703</td>
+                                <td>发送内容有敏感词,errorInfo中会返回具体的敏感词,此次下发请求被放弃</td>
+                            </tr>
+                            <tr>
+                                <td>10704</td>
+                                <td>下发号码包含黑名单,errorInfo会返回处于主叫黑名单的下发号码,此次下发请求被放弃</td>
+                            </tr>
+                            <tr>
+                                <td>10705</td>
+                                <td>接收号码包含黑名单,errorInfo会返回处于被叫黑名单的接收号码,此次下发请求被放弃</td>
+                            </tr>
+                            <tr>
+                                <td>10706</td>
+                                <td>接收号码中包含非法号码,errorInfo会返回非法的接收号码,此次下发请求被放弃</td>
+                            </tr>
+                            <tr>
+                                <td>10708</td>
+                                <td>SI鉴权失败,resultInfo中返回具体SI鉴权失败原因,如:SI不存在,此次下发请求被放弃</td>
+                            </tr>
+                            <tr>
+                                <td>10709</td>
+                                <td>余额不足</td>
+                            </tr>
+                            <tr>
+                                <td>10712</td>
+                                <td>参数异常,resultInfo返回出现异常的参数,此次下发请求被放弃</td>
+                            </tr>
+                            <tr>
+                                <td>10713</td>
+                                <td>模板不存在或未审核通过</td>
+                            </tr>
+                            <tr>
+                                <td>10714</td>
+                                <td>缺少模板参数</td>
+                            </tr>
+                        </table>
+</div> -->
+</div>
+</body>
+</html>

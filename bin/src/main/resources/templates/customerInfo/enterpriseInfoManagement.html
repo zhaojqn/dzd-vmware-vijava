@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<head th:include="common"/>
+	<script th:src="@{/js/customerInfo/enterpriseInfoManagement.js}"></script>
+	<title>企业信息管理</title>
+</head>
+<body>
+<div id="loading" style="position:absolute;z-index:1000;top:0px;left:0px;width:100%;height:100%;background:#DDDDDB;text-align :center;padding-top:20%;">
+     <img alt="" src="/image/loding_1.gif"/>
+</div>
+<!-- 主页开始 -->
+<div title="企业信息管理" class="easyui-panel" data-options="fit:true">
+	<table id="pid">
+		<tr class="topTr"></tr>
+		<tr>
+			<td class="paramLabelTd">企业ID：</td>
+			<td class="paramTd"><input class="easyui-textbox" id="param1"/></td>
+			<td class="paramLabelTd">企业名称：</td>
+			<td class="paramTd"><input class="easyui-textbox" id="param2"/></td>
+			<td class="paramLabelTd">
+				<a class="easyui-linkbutton" onclick="openSearch()" iconCls="icon-search">查询</a>
+				<a class="easyui-linkbutton iov-param-button" onclick="openReset()" iconCls="icon-back">重置</a>
+				<a class="easyui-linkbutton iov-param-button" name="btn_search" onclick="openAdd()" iconCls="icon-add">新增</a>
+			</td>
+		</tr>
+	</table>
+	<div class="iov-table-div">
+		<table id="table"></table>
+	</div>
+</div>
+<!-- 主页结束 -->
+<!-- 企业新增开始 -->
+<div id="dialogAdd" data-options="modal:true" title="企业新增" class="easyui-dialog" closed="true" style="width:400px;">
+	<table class="full-width">
+		<tr class="topTr"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td>企业名称</td><td><input style="width:100%;" class="easyui-textbox" data-options="required:true" id="addInfo1"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td>邮箱地址</td><td><input style="width:100%;" class="easyui-textbox" id="addInfo2"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td>企业电话</td><td><input style="width:100%;" class="easyui-textbox" id="addInfo3"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td>企业地址</td><td><input style="width:100%;" class="easyui-textbox" id="addInfo4"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+	</table>
+	<p class="dialog-button-p">
+		<a class="easyui-linkbutton" onclick="saveDialogAdd()" iconCls="icon-ok">保存</a>
+		<a class="easyui-linkbutton iov-param-button" onclick="closeDialogAdd()" iconCls="icon-cancel">关闭</a>
+	</p>
+</div>
+<!-- 企业新增结束 -->
+<!-- 密码修改开始 -->
+<div id="dialogPswdChange" data-options="modal:true" title="密码修改" class="easyui-dialog" closed="true" style="width:400px;">
+	<table class="full-width">
+		<tr class="topTr"></tr>
+		<tr>
+			<td style="width:10%;"></td>
+			<td style="width:20%;">原密码</td><td style="width:60%;"><input style="width:100%;" class="easyui-textbox" data-options="required:true" id="addInfo1"/></td>
+			<td style="width:10%;"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td></td>
+			<td>新密码</td><td><input style="width:100%;" class="easyui-textbox" data-options="required:true" id="addInfo4"/></td>
+			<td></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td></td>
+			<td>确认密码</td><td><input style="width:100%;" class="easyui-textbox" data-options="required:true" id="addInfo7"/></td>
+			<td></td>
+		</tr>
+		<tr class="trspace"></tr>
+	</table>
+	<p class="dialog-button-p">
+		<a class="easyui-linkbutton" onclick="" iconCls="icon-ok">确认</a>
+		<a class="easyui-linkbutton iov-param-button" onclick="" iconCls="icon-cancel">关闭</a>
+	</p>
+</div>
+<!-- 密码修改结束 -->
+<!-- 企业修改开始 -->
+<div id="dialogEdit" data-options="modal:true" title="企业修改" class="easyui-dialog" closed="true" style="width:400px;">
+	<input type="hidden" id="hiddenInfo1"/>
+	<input type="hidden" id="hiddenInfo2"/>
+	<input type="hidden" id="hiddenInfo3"/>
+	<input type="hidden" id="hiddenInfo4"/>
+	<input type="hidden" id="hiddenInfo5"/>
+	<table class="full-width">
+		<tr class="topTr"></tr>
+		<tr>
+			<td class="dialog-td-first" style="width:10%;"></td>
+			<td style="width:20%;">企业ID</td><td style="width:60%;"><input style="width:100%;" class="easyui-textbox" data-options="disabled:true" id="editInfo1"/></td>
+			<td class="dialog-td-last" style="width:10%;"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td>SIcode</td><td><input style="width:100%;" class="easyui-textbox" data-options="disabled:true" id="editInfo2"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td>企业名称</td><td><input style="width:100%;" class="easyui-textbox" data-options="required:true" id="editInfo3"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td>邮箱地址</td><td><input style="width:100%;" class="easyui-textbox" id="editInfo4"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td>手机号码</td><td><input style="width:100%;" class="easyui-textbox" id="editInfo5"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+	</table>
+	<p class="dialog-button-p">
+		<a class="easyui-linkbutton" onclick="saveDialogEdit()" iconCls="icon-ok">保存</a>
+		<a class="easyui-linkbutton iov-param-button" onclick="closeDialogEdit()" iconCls="icon-cancel">关闭</a>
+	</p>
+</div>
+<!-- 企业修改结束 -->
+<!-- 短信签名修改开始 -->
+<div id="dialogSignChange" data-options="modal:true" title="短信签名修改" class="easyui-dialog" closed="true" style="width:400px;">
+	<table class="full-width">
+		<tr class="topTr"></tr>
+		<tr>
+			<td style="width:10%;"></td>
+			<td style="width:20%;">短信接入码</td><td style="width:60%;"><input style="width:100%;" class="easyui-textbox" data-options="required:true" id="addInfo1"/></td>
+			<td style="width:10%;"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td></td>
+			<td>原短信签名</td><td><input style="width:100%;" class="easyui-textbox" data-options="required:true" id="addInfo4"/></td>
+			<td></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td></td>
+			<td>新短信签名</td><td><input style="width:100%;" class="easyui-textbox" data-options="required:true" id="addInfo7"/></td>
+			<td></td>
+		</tr>
+		<tr class="trspace"></tr>
+	</table>
+	<p class="dialog-button-p">
+		<a class="easyui-linkbutton" onclick="" iconCls="icon-ok">确认</a>
+		<a class="easyui-linkbutton iov-param-button" onclick="" iconCls="icon-cancel">关闭</a>
+	</p>
+</div>
+<!-- 短信签名修改结束 -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<head th:include="common"/>
+	<script th:src="@{/js/whitelist/whitelist.js}"></script>	
+	<script th:src="@{/js/common.js}"></script>
+	<script th:src="@{/js/kz.js}"></script><!-- easyUI 鼠标悬停显示内容需要引入的js，该js需在easyui.js引用之后再引用 -->
+	
+	<title>白名单管理</title>
+</head>
+<body>
+<div id="loading" style="position:absolute;z-index:1000;top:0px;left:0px;width:100%;height:100%;background:#DDDDDB;text-align :center;padding-top:20%;">
+     <img alt="" src="/image/loding_1.gif"/>
+</div>
+<!-- 主页开始 -->
+<div title="白名单管理" class="easyui-panel" data-options="fit:true">
+	<table id="pid">
+		<tr class="topTr"></tr>
+		<tr>
+			<!-- <td class="paramLabelTd">企业ID：</td>
+			<td class="paramTd"><input class="easyui-textbox" id="param1"/></td>
+			<td class="paramLabelTd">企业名称：</td>
+			<td class="paramTd"><input class="easyui-textbox" id="param2"/></td> -->
+			<td class="paramLabelTd">白名单ip：</td>
+			<td class="paramTd"><input class="easyui-textbox" id="param3"/></td>	
+			<td class="paramLabelTd">创建时间：</td>
+			<td class="paramTd"><input class="easyui-datetimebox" id="sTime" data-options="editable:false"/></td>
+			<td class="paramLabelTd">至：</td>
+			<td class="paramTd"><input class="easyui-datetimebox" id="eTime" data-options="editable:false"/></td>
+			
+				
+		</tr>
+		<tr>
+		   <td class="paramLabelTd">状态：</td>
+		   <td class="paramTd"><input class="easyui-combobox" id="param4" data-options="editable:false,panelHeight:'auto',prompt:'请选择状态...',valueField:'value',textField:'text',data:[{value:'0',text:'启用'},{value:'1',text:'停用'},{value:'9',text:'全部'}]"/></td>
+		   		   
+		   <td class="paramLabelTd" colspan="4">
+		         <a class="easyui-linkbutton" onclick="openSearch()" iconCls="icon-search">查询</a>
+				<a class="easyui-linkbutton iov-param-button" onclick="openReset()" iconCls="icon-back">重置</a>
+				<a class="easyui-linkbutton iov-param-button"  id="addButton" name="btn_search" onclick="openAdd()" iconCls="icon-add">新增</a>
+			</td>
+		</tr>
+	</table>
+	<div class="iov-table-div">
+		<table id="table"></table>
+	</div>
+</div>
+<!-- 主页结束 -->
+<!-- 白名单新增开始 -->
+<div id="dialogAdd" data-options="modal:true" title="白名单新增" class="easyui-dialog" closed="true" style="width:400px;">
+	<table class="full-width">
+		<tr class="topTr"></tr>
+		<tr style="display:none">
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;"><span style="color:red;">*</span>企业ID</span></td><td><input style="width:100%;" class="easyui-textbox" data-options="disabled:true" readonly="readonly" id="orgIdAdd"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;"><span style="color:red;">*</span>企业名称</span></td><td><input style="width:100%;" class="easyui-textbox" data-options="disabled:true" readonly="readonly" id="orgNameAdd"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;"><span style="color:red;">*</span>白名单IP</span></td><td><input style="width:100%;" class="easyui-textbox" data-options="" id="addInfo1"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;"><span style="color:red;">*</span>状态</span></td>
+			<td><select id="addInfo2" class="easyui-combobox" name="addInfo2" style="width:250px;" data-options="editable:false,prompt:'请选择数据类型...'">
+                 <option value="0">启用</option><option value="1">停用</option>
+            </select></td>
+			<td class="dialog-td-last"></td>
+		</tr> 
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;">备注</span></td><td><input style="width:100%;" class="easyui-textbox" data-options="multiline:true" id="addInfo3"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr class="trspace"></tr>
+	</table>
+	<div class="dialog-button messager-button">
+	<!-- <p class="dialog-button-p"> -->
+		<a class="easyui-linkbutton" onclick="saveDialogAdd()" iconCls="icon-ok">保存</a>
+		<a class="easyui-linkbutton iov-param-button" onclick="closeDialogAdd()" iconCls="icon-cancel">关闭</a>
+	<!-- </p> --></div>
+</div>
+<!-- 白名单新增结束 -->
+
+<!-- 白名单修改开始 -->
+<div id="dialogEdit" data-options="modal:true" title="白名单修改" class="easyui-dialog" closed="true" style="width:400px;">
+	
+	<input type="hidden" id="editInfoId"/>
+	<table class="full-width">
+	    <tr style="display:none">
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;"><span style="color:red;">*</span>企业ID</span></td><td><input style="width:100%;" class="easyui-textbox" data-options="disabled:true" readonly="readonly" id="orgIdEdit"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>
+		<tr style="display:none">
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;"><span style="color:red;">*</span>白名单IP原始值</span></td><td><input style="width:100%;" class="easyui-textbox" data-options="" id="editInfo1Now"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>		
+	
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;"><span style="color:red;">*</span>白名单IP</span></td><td><input style="width:100%;" class="easyui-textbox" data-options="" id="editInfo1"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>		
+		<tr class="trspace"></tr>
+		<tr>
+			<td class="dialog-td-first"></td>
+			<td style="text-align:right;"><span style="margin-right:20px;">备注</span></td><td><input style="width:100%;" class="easyui-textbox" data-options="multiline:true" id="editInfo2"/></td>
+			<td class="dialog-td-last"></td>
+		</tr>			
+		<tr class="trspace"></tr>
+	</table>
+	<div class="dialog-button messager-button">
+		<a class="easyui-linkbutton" onclick="saveDialogEdit()" iconCls="icon-ok">保存</a>
+		<a class="easyui-linkbutton iov-param-button" onclick="closeDialogEdit()" iconCls="icon-cancel">关闭</a>
+	</div>
+</div>
+<!-- 白名单修改结束 -->
+
+</body>
+</html>

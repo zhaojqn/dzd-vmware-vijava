@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<head th:include="common"/>
+	<script th:src="@{/js/APIManagement/APIInstructionText.js}"></script>
+	<title>API说明文档</title>
+</head>
+<body>
+<!-- <div id="loading" style="position:absolute;z-index:1000;top:0px;left:0px;width:100%;height:100%;background:#DDDDDB;text-align :center;padding-top:20%;">
+     <img alt="" src="/image/loding_1.gif"/>
+</div> -->
+<div title="API说明文档" class="easyui-panel" data-options="fit:true">
+	<div>
+		<table id="table"></table>
+	</div>
+</div>
+</body>
+</html>

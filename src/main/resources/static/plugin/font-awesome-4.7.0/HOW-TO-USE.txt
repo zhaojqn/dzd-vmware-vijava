@@ -1,0 +1,28 @@
+图标使用方法
+
+<i class="fa fa-trash-o fa-lg"></i>
+
+fa -> 必加！
+fa-trash-o -> 图标
+fa-lg -> 图标大小，可不加。
+大小依次为：
+不加最小， fa-lg(33%递增)、fa-2x、 fa-3x、fa-4x、 fa-5x依次变大
+
+使用图标替换easyui按钮图标样式时，将data-option中的图标除去，再将图标插入按钮中，并根据空隙添加空格：&nbsp;
+<a class="easyui-linkbutton"><i class="fa fa-search fa-lg"></i>&nbsp;查询</a>
+
+查询：<i class="fa fa-search fa-lg"></i>
+编辑：<i class="fa fa-pencil fa-lg"></i>
+保存：<i class="fa fa-floppy-o fa-lg"></i>
+重置：<i class="fa fa-reply fa-lg"></i>
+新增：<i class="fa fa-plus fa-lg"></i>
+导入：<i class="fa fa-upload fa-lg"></i>
+导出,出库：<i class="fa fa-download fa-lg"></i>
+确认：<i class="fa fa-check fa-lg"></i>
+关闭/取消：<i class="fa fa-close fa-lg"></i>
+锁定：<i class="fa fa-unlock-alt fa-lg"></i>
+解锁：<i class="fa fa-unlock fa-lg"></i>
+更换：<i class="fa fa-exchange fa-lg"></i>
+删除：<i class="fa fa-trash-o fa-lg"></i>
+批量退库：<i class="fa fa-database fa-lg"></i>
+批量注册：<i class="fa fa-registered fa-lg"></i>
