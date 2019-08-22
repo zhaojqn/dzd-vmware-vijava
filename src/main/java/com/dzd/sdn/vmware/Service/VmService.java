@@ -6,25 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.vmware.vim25.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dzd.sdn.util.JSONUtils;
-import com.vmware.vim25.PerfCounterInfo;
-import com.vmware.vim25.PerfEntityMetricBase;
-import com.vmware.vim25.PerfEntityMetricCSV;
-import com.vmware.vim25.PerfInterval;
-import com.vmware.vim25.PerfMetricId;
-import com.vmware.vim25.PerfMetricSeriesCSV;
-import com.vmware.vim25.PerfProviderSummary;
-import com.vmware.vim25.PerfQuerySpec;
-import com.vmware.vim25.VirtualHardware;
-import com.vmware.vim25.VirtualMachineCapability;
-import com.vmware.vim25.VirtualMachineConfigInfo;
-import com.vmware.vim25.VirtualMachineConfigSummary;
-import com.vmware.vim25.VirtualMachineSummary;
 import com.vmware.vim25.mo.Folder;
 import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ManagedEntity;
@@ -50,9 +38,15 @@ public class VmService {
 	        		 VirtualMachine virtualMachine=(VirtualMachine)mes[i];
 	        		 if(virtualMachine.getConfig().getName().equals(vmName)){
 	        			 VirtualMachineSummary smm=virtualMachine.getSummary();
-	        			 VirtualHardware  vh= virtualMachine.getConfig().getHardware() ;  
-	        			 
-	        			 result=JSONUtils.obj2json(vh );
+	        			 VirtualHardware  vh= virtualMachine.getConfig().getHardware() ;
+                         GuestInfo guest = virtualMachine.getGuest();
+                         VirtualMachineRuntimeInfo runtime = virtualMachine.getRuntime();
+                         ManagedEntityStatus configStatus = virtualMachine.getConfigStatus();
+
+                         Map<String,Object> map = new HashMap<>(3);
+	        			 map.put("summary",smm);
+	        			 map.put("VirtualHardware",vh);
+	        			 result=JSONUtils.obj2json(map );
 	        		 }
 				}
 	         }
