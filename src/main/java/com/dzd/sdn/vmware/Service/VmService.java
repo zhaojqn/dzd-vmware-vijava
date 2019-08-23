@@ -40,12 +40,14 @@ public class VmService {
 	        			 VirtualMachineSummary smm=virtualMachine.getSummary();
 	        			 VirtualHardware  vh= virtualMachine.getConfig().getHardware() ;
                          GuestInfo guest = virtualMachine.getGuest();
+                         String hostName = guest.getHostName();
                          VirtualMachineRuntimeInfo runtime = virtualMachine.getRuntime();
                          ManagedEntityStatus configStatus = virtualMachine.getConfigStatus();
 
-                         Map<String,Object> map = new HashMap<>(3);
-	        			 map.put("summary",smm);
-	        			 map.put("VirtualHardware",vh);
+                         Map<String,Object> map = new HashMap<>(13);
+//	        			 map.put("summary",smm);
+//	        			 map.put("VirtualHardware",vh);
+	        			 map.put("guest",guest);
 	        			 result=JSONUtils.obj2json(map );
 	        		 }
 				}
